@@ -1,4 +1,4 @@
-const util = require('util');
+// const util = require('util');
 const mysql = require('mysql');
 
 let connection;
@@ -23,6 +23,6 @@ connection.connect(err => {
     console.log ("connect as id " + connection.threadId);
 });
 
-connection.query = util.promisify(connection.query);
+// connection.query = util.promisify(connection.query);
 
 module.exports = connection;
