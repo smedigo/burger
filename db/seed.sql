@@ -1,7 +1,7 @@
 USE burgersDB;
 
-INSERT INTO burger (burger_name, devoured)
+INSERT INTO burgers (burger_name, devoured)
 VALUES ('Basic Burger', false),
-('Double Burger', true),
+('Double Burger', false),
 ('Vegie Burger', false),
-('Bacon Burger',true);
+('Bacon Burger',false);

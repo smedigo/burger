@@ -37,7 +37,7 @@ When the user inputs the burger name in the app, the burger will be displayed on
 ​
 The following installations are needed for this package:
 1. npm init  
-2. npm install node - installs dependencies from the package.json (util, inquirer, console.table, mysql)
+2. npm install node - installs dependencies from the package.json ( inquirer, mysql)
     
 
 ## Questions 

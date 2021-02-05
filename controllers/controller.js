@@ -2,33 +2,24 @@ var express = require("express");
 
 var router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
-var burger = require("../models/burger.js");
 
-// Create all our routes and set up logic within those routes where required.
-// router.get("/", function(req, res) {
-//   burger.all(function(data) {
-//     var hbsObject = {
-//       burger: data
-//     };
-//     console.log(hbsObject);
-//     res.render("index", hbsObject);
-//   });
-// });
+var burger = require("../model/burger.js");
 
-// get route -> index
+// get route _index
 router.get("/", function(req, res) {
     res.redirect("/burgers");
 });
 
+
 router.get("/burgers", function(req, res) {
     burger.all(function(burgerData) {
+        // wrapper for orm.js that using MySQL qury callback will return burger_data, then render to index with handlebar
         res.render("index", { burger_data: burgerData});
     });
 });
 
 
-// post route -> back to index
+// post route back to index
 router.post("/burgers/create", function(req, res) {
   burger.create(req.body.burger_name, function(result) {
       console.log(result);
@@ -37,7 +28,7 @@ router.post("/burgers/create", function(req, res) {
 });
 
 
-// put route -> back to index
+
 router.put("/burger/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
@@ -47,7 +38,7 @@ router.put("/burger/:id", function(req, res) {
     burger: req.body.burger
   }, condition, function(result) {
     if (result.changedRows == 0) {
-      // If no rows were changed, then the ID must not exist, so 404
+      
       return res.status(404).end();
     } else {
       res.status(200).end();
