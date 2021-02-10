@@ -29,7 +29,7 @@ When the user inputs the burger name in the app, the burger will be displayed on
 ​
 ## Demonstration 
 ​
-[Application link to github]()
+[Application link to github](https://github.com/smedigo/burger)
 [Application link to Heroku]()
 ​
 ​
