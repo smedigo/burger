@@ -20,7 +20,7 @@ router.get("/burgers", function(req, res) {
 
 
 // post route back to index
-router.post("/burgers/create", function(req, res) {
+router.post("/burgers", function(req, res) {
   burger.create(req.body.burger_name, function(result) {
       console.log(result);
       res.redirect("/")
@@ -29,13 +29,13 @@ router.post("/burgers/create", function(req, res) {
 
 
 
-router.put("/burger/:id", function(req, res) {
-  var condition = "id = " + req.params.id;
+router.put("/burgers/:id", function(req, res) {
+  var condition = `id = ${req.params.id}`;
 
   console.log("condition", condition);
 
   burger.update({
-    burger: req.body.burger
+    devoured: req.body.devoured
   }, condition, function(result) {
     if (result.changedRows == 0) {
       
