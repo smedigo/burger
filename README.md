@@ -30,7 +30,7 @@ When the user inputs the burger name in the app, the burger will be displayed on
 ## Demonstration 
 ​
 [Application link to github](https://github.com/smedigo/burger)
-[Application link to Heroku]()
+[Application link to Heroku](https://obscure-savannah-81265.herokuapp.com/burgers)
 ​
 ​
 ## Installation
